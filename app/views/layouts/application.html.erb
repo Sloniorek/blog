@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title>Słonia zabawy z Ruby</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Home", root_path %>
-<%= link_to "New Post", new_post_path %>
-
+<div>
+<ul>
+  <li><%= link_to "Home", root_path %></li>
+  <li><%= link_to "New Post", new_post_path %></li>
+  </ul> 
+<h1>Słonia zabawy z Ruby</h1>
+</div>
 <%= yield %>
 
 </body>

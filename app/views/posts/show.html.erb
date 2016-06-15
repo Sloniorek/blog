@@ -1,6 +1,34 @@
-<h1><%= @post.title %></h1>
+<h2><%= @post.title %></h2>
 
 <div><%= @post.body %></div>
 
-<%= link_to "Edit Post", edit_post_path(@post) %>
-<%= link_to "Delete Post", post_path(@post), method: :delete, data: { confirm: "Are you sure?"} %>
+<%= link_to "Edytuj", edit_post_path(@post) %>
+<%= link_to "Usuń", post_path(@post), method: :delete, data: { confirm: "Are you sure?"} %>
+
+<h2>Komentarze:</h2>
+<% @post.comments.each do |comment| %>
+  <p>
+    <strong>Imię:</strong>
+    <%= comment.commenter %>
+  </p>
+ 
+  <p>
+    <strong>Treść:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h3>Dodaj komentarz:</h3>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <p>
+    <%= f.label :imię %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :treść %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
