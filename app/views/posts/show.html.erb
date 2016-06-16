@@ -21,11 +21,11 @@
 <h3>Dodaj komentarz:</h3>
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <p>
-    <%= f.label :imię %><br>
+    <%= f.label :commenter %><br>
     <%= f.text_field :commenter %>
   </p>
   <p>
-    <%= f.label :treść %><br>
+    <%= f.label :body %><br>
     <%= f.text_area :body %>
   </p>
   <p>
