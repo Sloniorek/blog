@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Słonia zabawy z Ruby</title>
+  <title>Elephant on Rails</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div>
-<ul>
-  <li><%= link_to "Home", root_path %></li>
-  <li><%= link_to "New Post", new_post_path %></li>
-  </ul> 
-<h1>Słonia zabawy z Ruby</h1>
+  <div class="container">
+    <div class="header">
+      <h1>Słonia zabawy z Ruby</h1>
+     </div>
+    <div class="nav">
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li>O mnie</li>
+        <li>Ruby on Rails</li>
+        <li>Prawo</li>
+        <li>Różności</li>
+      </ul> 
+      </div>
+    <div class="main">
+      <div class="main_left">
+        <%= yield %>
+      </div>
+      <div class="main_right">
+
+      <ul>
+      <li><%= link_to "New Post", new_post_path %></li>
+      </ul>
+      </div>
+    </div>
+    <div class="footer">
+    <p>designed by sloniorek 2016</p>
+    </div>
+
 </div>
-<%= yield %>
+
 
 </body>
 </html>

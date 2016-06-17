@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   	resources :comments
   end
   root 'posts#index'
+  get '/post/:id' => 'posts#show'
 end
