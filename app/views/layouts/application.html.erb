@@ -7,10 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Słonia zabawy z Ruby</h1>
-     </div>
     <div class="nav">
       <ul>
         <li><%= link_to "Home", root_path %></li>
@@ -20,23 +16,25 @@
         <li>Różności</li>
       </ul> 
       </div>
+      <div class="header">
+      <%= image_tag("image.png", width: 1200) %>
+     </div>
+     
     <div class="main">
       <div class="main_left">
         <%= yield %>
       </div>
+      <br>
       <div class="main_right">
-
       <ul>
       <li><%= link_to "New Post", new_post_path %></li>
       </ul>
       </div>
     </div>
-    <div class="footer">
-    <p>designed by sloniorek 2016</p>
+    
+    <div id="footer">
+      <p>designed by sloniorek 2016</p>
     </div>
-
-</div>
-
 
 </body>
 </html>
